@@ -22,7 +22,6 @@ textblob
 
 # Authentication and Security
 bcrypt
-hashlib  # (built-in Python module)
 
 # Telegram Bot Integration
 python-telegram-bot
