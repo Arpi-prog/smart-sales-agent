@@ -12,6 +12,31 @@ def apply_custom_styles():
             font-family: 'Inter', sans-serif;
         }
         
+        /* Force black background for entire app */
+        .stApp {
+            background-color: #000000 !important;
+        }
+        
+        /* Main container with black background */
+        .main {
+            background-color: #000000 !important;
+        }
+        
+        .main .block-container {
+            background-color: #000000 !important;
+            padding-top: 2rem;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar styling */
+        .css-1d391kg {
+            background-color: #111111 !important;
+        }
+        
+        section[data-testid="stSidebar"] {
+            background-color: #111111 !important;
+        }
+        
         /* Animations */
         @keyframes glow {
             from { text-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
@@ -33,18 +58,7 @@ def apply_custom_styles():
             to { transform: translateX(0); opacity: 1; }
         }
         
-        /* Main Container - Responsive to theme */
-        .main .block-container {
-            padding-top: 2rem;
-            min-height: 100vh;
-        }
-        
-        /* Dark mode specific styles */
-        [data-theme="dark"] .main .block-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        /* Header Styling - Theme aware */
+        /* Header Styling - Always visible */
         .main-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
@@ -56,56 +70,34 @@ def apply_custom_styles():
             animation: glow 3s ease-in-out infinite alternate;
         }
         
-        /* Glass Card Effect - Theme responsive */
+        /* Glass Card Effect - Dark theme optimized */
         .glass-card {
+            background: rgba(255, 255, 255, 0.1) !important;
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
             animation: fadeInUp 0.6s ease-out;
             margin-bottom: 2rem;
-            border: 1px solid;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white !important;
         }
         
-        /* Light mode glass card */
-        [data-theme="light"] .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(0, 0, 0, 0.1);
-            color: #333;
-        }
-        
-        /* Dark mode glass card */
-        [data-theme="dark"] .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        
-        /* User Info Card - Theme aware */
+        /* User Info Card */
         .user-info {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%) !important;
             backdrop-filter: blur(10px);
             padding: 1rem 1.5rem;
             border-radius: 15px;
             animation: slideIn 0.8s ease-out;
-            border: 1px solid;
-        }
-        
-        [data-theme="light"] .user-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.3);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .user-info {
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
-            border-color: rgba(255,255,255,0.2);
-            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white !important;
         }
         
         /* Mood Display - Always visible */
         .mood-display {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            color: white;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+            color: white !important;
             font-size: 1.3rem;
             font-weight: 600;
             padding: 2rem;
@@ -118,8 +110,8 @@ def apply_custom_styles():
         
         /* Reply Box - Always visible */
         .reply-box {
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-            color: white;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+            color: white !important;
             padding: 2rem;
             border-radius: 20px;
             margin: 1rem 0;
@@ -127,37 +119,27 @@ def apply_custom_styles():
             animation: fadeInUp 0.8s ease-out;
         }
         
-        /* Stats Boxes - Theme aware */
+        /* Stats Boxes */
         .stats-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%) !important;
             backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 15px;
             margin: 1rem 0;
             transition: all 0.3s ease;
-            border: 1px solid;
-        }
-        
-        [data-theme="light"] .stats-box {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.2);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .stats-box {
-            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-            border-color: rgba(255,255,255,0.1);
-            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white !important;
         }
         
         .stats-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.2);
         }
         
         /* Alert Styles */
         .alert-danger {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            color: white;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+            color: white !important;
             padding: 1rem 2rem;
             border-radius: 15px;
             border: none;
@@ -166,8 +148,8 @@ def apply_custom_styles():
         }
         
         .alert-success {
-            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
-            color: white;
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%) !important;
+            color: white !important;
             padding: 1rem 2rem;
             border-radius: 15px;
             border: none;
@@ -176,8 +158,8 @@ def apply_custom_styles():
         
         /* Button Styles */
         .stButton > button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
             border: none;
             border-radius: 25px;
             padding: 0.7rem 2rem;
@@ -197,31 +179,21 @@ def apply_custom_styles():
             border-radius: 10px;
         }
         
-        /* Chat History - Theme aware */
+        /* Chat History */
         .chat-item {
+            background: rgba(255, 255, 255, 0.1) !important;
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 1rem;
             margin: 0.5rem 0;
             transition: all 0.3s ease;
-            border: 1px solid;
-        }
-        
-        [data-theme="light"] .chat-item {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.2);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .chat-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.1);
-            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white !important;
         }
         
         .chat-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
         }
         
         /* Floating Action Button */
@@ -247,107 +219,71 @@ def apply_custom_styles():
             box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
         }
         
-        /* Text Area Styling - Theme aware */
+        /* Text Area Styling */
         .stTextArea textarea {
-            border: 1px solid;
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
             border-radius: 15px;
             backdrop-filter: blur(10px);
-        }
-        
-        [data-theme="light"] .stTextArea textarea {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(102, 126, 234, 0.3);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .stTextArea textarea {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: white;
+            color: white !important;
         }
         
         .stTextArea textarea:focus {
-            border-color: #667eea;
+            border-color: #667eea !important;
             box-shadow: 0 0 25px rgba(102, 126, 234, 0.3);
         }
         
-        /* Tabs - Theme aware */
+        /* Text Input Styling */
+        .stTextInput input {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 15px;
+            color: white !important;
+        }
+        
+        /* Tabs */
         .stTabs [data-baseweb="tab-list"] {
+            background: rgba(255, 255, 255, 0.1) !important;
             border-radius: 15px;
             padding: 0.5rem;
-        }
-        
-        [data-theme="light"] .stTabs [data-baseweb="tab-list"] {
-            background: rgba(102, 126, 234, 0.1);
-        }
-        
-        [data-theme="dark"] .stTabs [data-baseweb="tab-list"] {
-            background: rgba(255, 255, 255, 0.1);
         }
         
         .stTabs [data-baseweb="tab"] {
             background: transparent;
             border-radius: 10px;
             font-weight: 600;
-        }
-        
-        [data-theme="light"] .stTabs [data-baseweb="tab"] {
-            color: #333;
-        }
-        
-        [data-theme="dark"] .stTabs [data-baseweb="tab"] {
-            color: white;
-        }
-        
-        .stTabs [aria-selected="true"] {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white !important;
         }
         
-        /* Expander - Theme aware */
+        .stTabs [aria-selected="true"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+        }
+        
+        /* Expander */
         .streamlit-expanderHeader {
+            background: rgba(255, 255, 255, 0.1) !important;
             border-radius: 15px;
-            border: 1px solid;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-weight: 600;
+            color: white !important;
         }
         
-        [data-theme="light"] .streamlit-expanderHeader {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.2);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .streamlit-expanderHeader {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        
-        /* Metrics - Theme aware */
+        /* Metrics */
         .metric-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%) !important;
             backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid;
-        }
-        
-        [data-theme="light"] .metric-card {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.2);
-            color: #333;
-        }
-        
-        [data-theme="dark"] .metric-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-            border-color: rgba(255,255,255,0.1);
-            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white !important;
         }
         
         .metric-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.2);
         }
         
         /* Loading Animation */
@@ -372,17 +308,45 @@ def apply_custom_styles():
             100% { transform: rotate(360deg); }
         }
         
-        /* Force visibility for main content in both themes */
-        .main-content {
-            color: var(--text-color, #333);
+        /* Force visibility for all text content */
+        .main-content, .main-content * {
+            color: white !important;
         }
         
-        [data-theme="light"] .main-content {
-            color: #333;
+        /* Streamlit specific overrides */
+        .stMarkdown, .stMarkdown * {
+            color: white !important;
         }
         
-        [data-theme="dark"] .main-content {
-            color: white;
+        /* Headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: white !important;
+        }
+        
+        /* Paragraphs */
+        p {
+            color: white !important;
+        }
+        
+        /* Labels */
+        .stSelectbox label, .stTextInput label, .stTextArea label, .stNumberInput label {
+            color: white !important;
+        }
+        
+        /* Select boxes */
+        .stSelectbox > div > div {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+        }
+        
+        /* Metric values */
+        .metric-value {
+            color: white !important;
+        }
+        
+        /* Success/Error messages */
+        .stSuccess, .stError, .stWarning, .stInfo {
+            color: white !important;
         }
     </style>
     """, unsafe_allow_html=True)
@@ -390,13 +354,14 @@ def apply_custom_styles():
 def render_login_header():
     """Render the login page header with animations"""
     st.markdown("""
-    <div style="text-align: center; padding: 2rem 0;" class="main-content">
+    <div style="text-align: center; padding: 2rem 0; color: white;" class="main-content">
         <h1 style="
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
             white-space: nowrap;
             animation: glow 2s ease-in-out infinite alternate;
+            color: white;
         ">
             <span style="color: #8ab4f8;">🧠</span>&nbsp;
             <span style="
@@ -405,7 +370,7 @@ def render_login_header():
                 -webkit-text-fill-color: transparent;
             ">Smart Sales Agent Pro</span>
         </h1>
-        <p style="font-size: 1.2rem; color: #888; margin-top: 0.5rem;">
+        <p style="font-size: 1.2rem; color: #ccc; margin-top: 0.5rem;">
             AI-Powered Customer Emotion Detection & Smart Reply Generation
         </p>
     </div>
@@ -423,7 +388,7 @@ def render_main_header():
                 </span>
             </span>
         </div>
-        <div style="text-align: center; font-size: 1.2rem; margin-top: -0.5rem;" class="main-content">
+        <div style="text-align: center; font-size: 1.2rem; margin-top: -0.5rem; color: white;">
             AI-Powered Customer Emotion Detection & Smart Reply Generation
         </div>
     </div>
@@ -433,17 +398,17 @@ def render_user_info(username):
     """Render user information card"""
     st.markdown(f"""
     <div class="user-info">
-        <span style="font-size: 1.1rem;">👤 Welcome, <strong>{username}</strong></span>
-        <br><span style="font-size: 0.9rem; opacity: 0.8;">🚀 Ready to analyze customer emotions!</span>
+        <span style="font-size: 1.1rem; color: white;">👤 Welcome, <strong>{username}</strong></span>
+        <br><span style="font-size: 0.9rem; opacity: 0.8; color: white;">🚀 Ready to analyze customer emotions!</span>
     </div>
     """, unsafe_allow_html=True)
 
 def render_sidebar_header():
     """Render sidebar header"""
     st.markdown("""
-    <div style="text-align: center; padding: 1rem; background: rgba(102, 126, 234, 0.2); border-radius: 15px; margin-bottom: 2rem;" class="main-content">
-        <h2 style="margin: 0;">🛠 Control Center</h2>
-        <p style="opacity: 0.8; margin: 0.5rem 0 0 0;">Customize your experience</p>
+    <div style="text-align: center; padding: 1rem; background: rgba(102, 126, 234, 0.2); border-radius: 15px; margin-bottom: 2rem; color: white;">
+        <h2 style="margin: 0; color: white;">🛠 Control Center</h2>
+        <p style="opacity: 0.8; margin: 0.5rem 0 0 0; color: white;">Customize your experience</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -452,22 +417,22 @@ def render_metric_card(value, label, color="#667eea"):
     st.markdown(f"""
     <div class="metric-card">
         <h2 style="margin: 0; color: {color};">{value}</h2>
-        <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">{label}</p>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.9; color: white;">{label}</p>
     </div>
     """, unsafe_allow_html=True)
 
 def render_mood_display(mood, confidence, mood_category, intensity=None, show_intensity=True):
     """Render mood analysis display"""
-    intensity_text = f'<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.5rem;">Intensity: {intensity.title()}</div>' if show_intensity and intensity else ''
+    intensity_text = f'<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.5rem; color: white;">Intensity: {intensity.title()}</div>' if show_intensity and intensity else ''
     
     st.markdown(f"""
     <div class="glass-card">
-        <h3 style="text-align: center; margin-bottom: 1.5rem;" class="main-content">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: white;">
             🧠 Emotion Analysis Results
         </h3>
         <div class="mood-display">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">{mood}</div>
-            <div style="font-size: 1rem; opacity: 0.9;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem; color: white;">{mood}</div>
+            <div style="font-size: 1rem; opacity: 0.9; color: white;">
                 Confidence: {confidence}% | Category: {mood_category.title()}
             </div>
             {intensity_text}
@@ -479,16 +444,16 @@ def render_reply_display(reply, lead_score, next_action):
     """Render AI reply display"""
     st.markdown(f"""
     <div class="glass-card">
-        <h3 style="text-align: center; margin-bottom: 1.5rem;" class="main-content">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: white;">
             🤖 AI-Generated Smart Reply
         </h3>
         <div class="reply-box">
-            <div style="font-size: 1.1rem; line-height: 1.6;">
+            <div style="font-size: 1.1rem; line-height: 1.6; color: white;">
                 {reply}
             </div>
         </div>
         <div style="margin-top: 1rem; text-align: center;">
-            <small style="opacity: 0.8;" class="main-content">
+            <small style="opacity: 0.8; color: white;">
                 💡 Lead Score: {lead_score}/100 | Action: {next_action}
             </small>
         </div>
@@ -518,7 +483,7 @@ def render_section_header(title, icon="📊"):
     """Render section headers with consistent styling"""
     st.markdown(f"""
     <div class="glass-card">
-        <h2 style="text-align: center; margin-bottom: 2rem;" class="main-content">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: white;">
             {icon} {title}
         </h2>
     </div>
@@ -530,23 +495,23 @@ def render_footer(username, chat_count):
     
     st.markdown(f"""
     <div class="glass-card">
-        <div style="text-align: center;" class="main-content">
-            <h3 style="margin-bottom: 1rem;">🧠 Smart Sales Agent Pro</h3>
-            <p style="opacity: 0.8; margin-bottom: 1rem;">
+        <div style="text-align: center; color: white;">
+            <h3 style="margin-bottom: 1rem; color: white;">🧠 Smart Sales Agent Pro</h3>
+            <p style="opacity: 0.8; margin-bottom: 1rem; color: white;">
                 AI-Powered Customer Emotion Detection & Smart Reply Generation
             </p>
             <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem;">
-                <div style="opacity: 0.7;">
+                <div style="opacity: 0.7; color: white;">
                     👤 <strong>User:</strong> {username}
                 </div>
-                <div style="opacity: 0.7;">
+                <div style="opacity: 0.7; color: white;">
                     📊 <strong>Messages:</strong> {chat_count}
                 </div>
-                <div style="opacity: 0.7;">
+                <div style="opacity: 0.7; color: white;">
                     🕒 <strong>Session:</strong> {datetime.now().strftime('%H:%M')}
                 </div>
             </div>
-            <p style="opacity: 0.6; font-size: 0.9rem;">
+            <p style="opacity: 0.6; font-size: 0.9rem; color: white;">
                 Built with ❤ for intelligent customer engagement
             </p>
         </div>
