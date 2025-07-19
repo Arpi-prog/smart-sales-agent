@@ -18,7 +18,6 @@ transformers
 torch
 scikit-learn
 nltk
-textblob
 
 # Authentication and Security
 bcrypt
