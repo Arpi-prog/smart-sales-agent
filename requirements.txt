@@ -21,6 +21,9 @@ nltk
 # Telegram Bot Integration
 python-telegram-bot
 
+# Web Scraping
+beautifulsoup4
+
 # Additional utilities
 requests
 python-dotenv
