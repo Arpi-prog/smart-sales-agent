@@ -1,4 +1,47 @@
+
+bcrypt
+# Core Web Framework
 streamlit
+
+# Data Processing and Analysis
+pandas
+numpy
+
+# Data Visualization
+plotly
+
+# Text-to-Speech
+gtts
+
+# Machine Learning and NLP (for mood detection)
 transformers
 torch
-sentencepiece
+scikit-learn
+nltk
+textblob
+
+# Authentication and Security
+bcrypt
+hashlib  # (built-in Python module)
+
+# Telegram Bot Integration
+python-telegram-bot
+
+# Date and Time Handling
+datetime  # (built-in Python module)
+
+# JSON Processing
+json  # (built-in Python module)
+
+# File Operations
+base64  # (built-in Python module)
+threading  # (built-in Python module)
+time  # (built-in Python module)
+re  # (built-in Python module)
+
+# Web Browser Operations
+webbrowser  # (built-in Python module)
+
+# Additional utilities that might be needed
+requests
+python-dotenv  # for environment variables (recommended for API keys)
