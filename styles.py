@@ -221,24 +221,41 @@ def apply_custom_styles():
         
         /* Text Area Styling */
         .stTextArea textarea {
-            background: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
             border-radius: 15px;
             backdrop-filter: blur(10px);
             color: white !important;
+            font-size: 16px !important;
         }
         
         .stTextArea textarea:focus {
             border-color: #667eea !important;
             box-shadow: 0 0 25px rgba(102, 126, 234, 0.3);
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+        
+        .stTextArea textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6) !important;
         }
         
         /* Text Input Styling */
         .stTextInput input {
-            background: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
             border-radius: 15px;
             color: white !important;
+            font-size: 16px !important;
+        }
+        
+        .stTextInput input:focus {
+            border-color: #667eea !important;
+            box-shadow: 0 0 25px rgba(102, 126, 234, 0.3);
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+        
+        .stTextInput input::placeholder {
+            color: rgba(255, 255, 255, 0.6) !important;
         }
         
         /* Tabs */
